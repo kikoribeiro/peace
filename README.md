@@ -1,7 +1,8 @@
 # PEACE
-
-## Projeto Tecnologias da Web
-
-Site com base na utilização de APIs☯️
-
+☯ ☯ ☯
+## Projeto Programação de Web
+☯️☯️☯️
+Site com base na utilização de APIs (Counter Strike:Global Offensive)
+☯ ☯ ☯
 realizado por Francisco Ribeiro
+☯️☯️☯️
