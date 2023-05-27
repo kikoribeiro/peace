@@ -128,7 +128,7 @@ let skinsData = []; // Variable to store the retrieved skins data
 
           displayData(filteredData);
       }
-      fetchCSGOData();
+    
 
 
       new Twitch.Embed("twitch-embed", {
