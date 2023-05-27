@@ -65,4 +65,76 @@ const updateProfileInfo = (profileData) => {
   };
   
 fetchCSGOProfile('76561198008049283');
+let skinsData = []; // Variable to store the retrieved skins data
+        function fetchCSGOData() {
+            fetch('https://bymykel.github.io/CSGO-API/api/en/skins.json')
+                .then(response => response.json())
+                .then(data => {
+                  skinsData = data;
+                    // Process the data
+                    displayData(skinsData);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
 
+        function displayData(data) {
+          const skinsTable = document.getElementById('skins-table');
+
+          // Clear any existing data
+          skinsTable.innerHTML = '';
+
+          // Create table headers
+          const tableHeaderRow = document.createElement('tr');
+          const headers = ['Nome', 'Imagem', 'Raridade'];
+          headers.forEach(header => {
+              const th = document.createElement('th');
+              th.textContent = header;
+              tableHeaderRow.appendChild(th);
+          });
+          skinsTable.appendChild(tableHeaderRow);
+
+          
+          data.forEach(skin => {
+              const tableRow = document.createElement('tr');
+
+              const nameCell = document.createElement('td');
+              nameCell.textContent = skin.name;
+              tableRow.appendChild(nameCell);
+
+              const imageCell = document.createElement('td');
+              const imageElement = document.createElement('img');
+              imageElement.src = skin.image; // Set the image URL
+              imageCell.appendChild(imageElement);
+              tableRow.appendChild(imageCell);
+
+              const rarityCell = document.createElement('td');
+              rarityCell.textContent = skin.rarity;
+              tableRow.appendChild(rarityCell);
+
+              skinsTable.appendChild(tableRow);
+          });
+        }
+       
+
+        function filterData() {
+          const searchQuery = document.getElementById('search-input').value.toLowerCase();
+
+          // Filter the skins based on the search query
+          const filteredData = skinsData.filter(skin => {
+              return skin.name.toLowerCase().includes(searchQuery);
+          });
+
+          displayData(filteredData);
+      }
+      fetchCSGOData();
+
+
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "monstercat",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
