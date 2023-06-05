@@ -6,7 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3c98f756c3.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="tracker.js" defer></script>
+   
     <title>Peace</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
             <li><a href="index.html">Home</a></li><!--
          --><li><a href="tracker.html">Tracker</a></li><!--
          --><li><a href="wiki.html">Wiki</a></li><!--
-         --><li><a href="major.html">Major</a></li>
+         --><li><a href="streams.html">Streams</a></li>
           </ul>
         </div>
       </nav>
@@ -47,14 +49,26 @@
             <li><a href="major.html">Major</a></li>
           </ul>
       </div>
-          <div id="profileData">
+      <div class="search-container">
+        <input type="text" id="steamidinput" placeholder="Enter Steam ID">
+        <button id="fetchbutton">Search</button>
+        
 
-
-
-
-            
-          </div>
       
+      </div>
+
+      <div id="resultContainer">
+        <h2></h2>
+        <div>
+            <h3>Stats:</h3>
+            <p>Total Kills:</p>
+            <p>Total Deaths:</p>
+            <p>Total Wins:</p>
+            <p>Total Matches Played:</p>
+        </div>
+    </div>
+    </div>
+
 
 </body>
 </html>

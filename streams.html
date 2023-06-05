@@ -6,8 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3c98f756c3.js" crossorigin="anonymous"></script>
-
-
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <title>Peace</title>
 </head>
 <body>
@@ -21,7 +20,7 @@
             <div class="nome">
             <a href="index.html">PEACE<i class="fa-solid fa-yin-yang fa-spin"></i></a>
           </div>
-    
+      
           <!-- Navbar Links -->
           <ul id="menu">
             <li><a href="index.html">Home</a></li><!--
@@ -45,8 +44,27 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="tracker.html">Tracker</a></li>
             <li><a href="wiki.html">Wiki</a></li>
-            <li><a href="streams.html">Streams</a></li>
+            <li><a href="major.html">Major</a></li>
           </ul>
       </div>
+
+      <div class="stream" id="twitch-embed">
+        <h1>zorlaKOKA</h1>
+
+      </div>
+      <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "zorlaKOKA",
+        layout: "video",
+        autoplay: false,
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script>
 </body>
 </html>
